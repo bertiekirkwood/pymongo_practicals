@@ -17,10 +17,25 @@ col = db[COLLECTION]
 print(col.name, ",", col.estimated_document_count())
 
 # create query
-query = {"Invoice": 489434}
+# query = {"Invoice": 489434}
 
 # more "complex" query
-#query = {"$or": [{"Invoice": 489434}, {"Country": "France"}]}
+# query = {"$or": [{"Invoice": 489434}, {"Country": "France"}]}
+
+# ex 1
+# query = {"Description": "Edwardian Toilet Roll Unit".upper()}
+
+# ex 2
+# query = {"Price": {"$gt": 10}}
+
+# ex 3
+# query = {"Customer ID": 14000}
+
+# ex 4
+# query = {"Quantity": {"$lt": 6}}
+
+# ex 5
+query = {"Country": "United Kingdom", "Quantity": {"$lt": 10}}
 
 # run query on collection
 doc = col.find(query)
